@@ -567,7 +567,8 @@ class CR_LoadTextList:
         elif file_extension == "txt":
             with open(filepath, "r",encoding='utf-8',errors='ignore') as txt_file:
                 for row in txt_file:
-                    list.append(row)
+                    if row.strip():  # 判断是否为非空行
+                        list.append(row)
         else:
             pass
         
